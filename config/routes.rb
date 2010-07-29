@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :account, :controller => "users"
   map.resources :property_groups do |property_group|
 		property_group.resources :property_sites
+		property_group.resources :users
   end
   
 
