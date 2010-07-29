@@ -1,2 +1,3 @@
 class PropertyGroupsController < ApplicationController
+	resource_controller
 end

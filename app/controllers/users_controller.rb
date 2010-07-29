@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  filter_access_to :all
-  filter_access_to :edit, :update, :attribute_check => true
+  # filter_access_to :all
+  # filter_access_to :edit, :update, :attribute_check => true
 
   # GET /users
   def index
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.property_group.build
   end
 
   # GET /users/1/edit

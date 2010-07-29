@@ -47,7 +47,8 @@ class User < ApplicationModel
   validates_format_of :password, :with => /[a-z]/i, :allow_nil => true, :message => "must include a letter"
   validates_format_of :password, :with => /[0-9]/, :allow_nil => true, :message => "must include a number"
 
-  
+  accepts_nested_attributes_for :property_group
+
   # This method is necessary method for declarative_authorization to determine roles
   # Roles returns e.g. [:admin]
   def role_symbols
