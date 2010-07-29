@@ -16,3 +16,6 @@
 [submodule "vendor/plugins/validation_reflection"]
 	path = vendor/plugins/validation_reflection
 	url = git@github.com:wested/validation_reflection.git
+[submodule "vendor/plugins/iso-3166-country-select"]
+	path = vendor/plugins/iso-3166-country-select
+	url = http://github.com/rails/iso-3166-country-select.git

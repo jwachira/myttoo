@@ -1,0 +1,24 @@
+<% title 'Property Sites', :body => true %>
+
+<%= link_to 'Add New Property Site', new_property_group_property_site_url(@property_group) %>
+
+<table>
+  <thead>
+    <th>Property Name</th>
+    <th>City, State</th>
+    <th>Phone Number</th>
+    <th>Fax Number</th>
+    <th>Property Manager</th>
+  </thead>
+  <tbody>
+    <% @property_sites.each do |property_site| %>
+     <tr>
+      <td><%= property_site.name         %></td>
+      <td><%= property_site.city         %></td>
+      <td><%= property_site.phone_number %></td>
+      <td><%= property_site.fax_number   %></td>
+      <td><%= link_to 'Edit', edit_property_group_property_site_url(property_site.property_group, property_group) %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>

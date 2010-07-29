@@ -7,4 +7,4 @@ class PropertySite < ActiveRecord::Base
   end
 end
 
-Property_group -> Property_site 
+# Property_group -> Property_site 

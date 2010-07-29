@@ -8,6 +8,8 @@ class CreatePropertyGroups < ActiveRecord::Migration
       t.string :postal_code
       t.string :state
       t.string :country
+      t.string :phone_number
+      t.string :fax_number
       t.timestamps
     end
     add_index :property_groups, :name

@@ -10,12 +10,27 @@ source 'http://gems.github.com'
 gem 'rails',              '2.3.8',  :require => nil
 gem 'rack',               '1.1.0'
 gem 'mysql'#,              :bundle => false
-
 gem 'authlogic',                       '2.1.3'
 gem 'formtastic',                      '0.9.7', :require => nil
 gem 'declarative_authorization',       '0.4'
 gem 'paperclip',                       '2.3.1.1'
- 
+gem 'exifr',                           '0.10.9'
+gem 'fastercsv',                        '1.5.0'
+gem 'searchlogic',                      '2.4.12'
+gem 'will_paginate',                    '2.3.12'
+gem "factory_girl"
+gem 'hoptoad_notifier'
+gem "acts_as_commentable"
+gem "geokit"
+gem 'bcrypt-ruby',                      '=2.1.2'
+gem 'resource_controller',              '0.6.6'
+gem "aws-s3",             :require => "aws/s3"
+gem "yelp"
+gem "recaptcha",                         "0.2.3"
+gem 'delayed_paperclip'
+gem 'bundler'
+gem 'acts_as_commentable',               "3.0.0"
+
 group :development do
   gem 'ruby-debug'
   gem 'ruby-debug-base'
