@@ -14,6 +14,15 @@ class CreateUsers < ActiveRecord::Migration
       t.string   :current_login_at
       t.string   :last_login_ip
       t.string   :current_login_ip
+      t.date     :date_of_birth
+      t.boolean  :licensed
+      t.date     :license_date
+      t.boolean  :cpr_certified
+      t.text     :career_inspiration
+      t.integer  :how_long_have_you_been_tattooing
+      t.integer  :billing
+      t.string   :how_did_you_learn_tattooing
+      t.string   :studio_or_mentor
     end
     add_index :users, :perishable_token
     add_index :users, :email

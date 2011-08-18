@@ -1,2 +1,0 @@
-module PropertyGroups::UsersHelper
-end

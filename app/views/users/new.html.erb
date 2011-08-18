@@ -1,5 +1,5 @@
-<% title 'Create Your Account', :body => true %>
+<% title 'Professional Artist Bio', :body => true %>
 
-<% semantic_form_for @user do |f| %>
+<% semantic_form_for @user, :html => {:multipart => true} do |f| %>
   <%= render :partial => "form", :locals => {:f => f} %>
 <% end %>

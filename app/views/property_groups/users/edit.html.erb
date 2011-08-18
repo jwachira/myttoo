@@ -1,9 +1,0 @@
-<% if @user == current_user %>
-  <% title 'Edit My Profile'%>
-<% else %>
-  <% title 'Edit User' %>
-<% end %>
-
-<% semantic_form_for @user, :url => user_path do |f| %>
-  <%= render :partial => "form", :locals => {:f => f} %>
-<% end %>

@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @user.property_group.build
   end
 
   # GET /users/1/edit
@@ -25,16 +24,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new
-    @user.email = params[:user][:email]
-    @user.first_name = params[:user][:first_name]
-    @user.last_name = params[:user][:last_name]
-    
-    ## need to limit role editing.
-    if permitted_to?(:set_role, @user)
-      @user.role = params[:user][:role]
-    end
-    
+    @user = User.new(params[:user])    
     if @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to(@user)
@@ -46,16 +36,8 @@ class UsersController < ApplicationController
   # PUT /users/1
   def update
     @user = User.find(params[:id])
-    @user.email = params[:user][:email]
-    @user.first_name = params[:user][:first_name]
-    @user.last_name = params[:user][:last_name]
-    
-    ## need to limit role editing.
-    if permitted_to?(:set_role, @user)
-      @user.role = params[:user][:role]
-    end
-    
-    if @user.save
+  
+    if @user.update_attributes(params[:user])
       flash[:notice] = 'User was successfully updated.'
       redirect_to(@user)
     else

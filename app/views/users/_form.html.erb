@@ -1,13 +1,21 @@
+<%= f.error_messages %>
 <% f.inputs do %>
   <%= f.input :first_name %> 
   <%= f.input :last_name %> 
   <%= f.input :email %>
-  <% f.semantic_fields_for :property_group do |p_f| %>
-    <%= p_f.input :name %>
-  <% end %>
-  <% if permitted_to?(:set_role, @user) %>
-    <%= f.input :role, :as => :select, :collection => User::ROLES %>
-  <% end %>
+  <%= f.input :date_of_birth %>
+  <%= f.input :licensed, :as => :boolean, :label => "Are you licensed?" %>
+  <%= f.input :license_date,              :label => "Licensed since"    %>
+  <%= f.input :cpr_certified, :as => :boolean, :label => "CPR Certified?" %>
+  <%= f.input :career_inspiration, :label => "What was your biggest inspiration?" %>
+  <%= f.input :how_long_have_you_been_tattooing, :collection => (0..50).to_a, :as => :select, :label => "How long have you been tattooing?", :hint => "(do not consider apprenticeship years)"%>
+  <%= f.input :billing, :collection => ["Per Hour", "Per Tattoo", "Both"], :label => "How do you bill work?", :as => :select %>
+  <%= f.input :how_did_you_learn_tattooing, :collection => ["self-taught", "studio apprenticeship", "taught by mentor"], :label => "How did you learn tattooing", :as => :select  %>
+  <%= f.input :studio_or_mentor, :label => "Name of Studio or Mentor" %>
+  
+  <%= render :partial => "attachment", :locals => {:f => f} %>
+  
+  
 <% end %>
 
 <% f.buttons do %>

@@ -1,6 +1,3 @@
-[submodule "vendor/plugins/wested_cap"]
-	path = vendor/plugins/wested_cap
-	url = git@github.com:wested/wested_cap.git
 [submodule "vendor/plugins/annotate_models"]
 	path = vendor/plugins/annotate_models
 	url = git@github.com:wested/annotate_models.git
@@ -10,12 +7,7 @@
 [submodule "vendor/plugins/cross_site_sniper"]
 	path = vendor/plugins/cross_site_sniper
 	url = git@github.com:wested/cross_site_sniper.git
-[submodule "vendor/plugins/jrails"]
-	path = vendor/plugins/jrails
-	url = git@github.com:wested/jrails.git
 [submodule "vendor/plugins/validation_reflection"]
 	path = vendor/plugins/validation_reflection
 	url = git@github.com:wested/validation_reflection.git
-[submodule "vendor/plugins/iso-3166-country-select"]
-	path = vendor/plugins/iso-3166-country-select
-	url = http://github.com/rails/iso-3166-country-select.git
+

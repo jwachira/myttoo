@@ -1,5 +1,72 @@
 <% title @user.full_name  %>
 <ul>
-<li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
-<li><%= link_to 'Change Password', edit_user_password_path(@user) %></li>
+ <li><%= link_to 'Edit Profile', edit_user_path(@user) %></li>
+ <li><%= link_to 'Change Password', edit_user_password_path(@user) %></li>
 </ul>
+
+<div>
+  First Name:<br>
+  <%= @user.first_name %>
+</div>
+
+<div>
+  Last Name:<br>
+  <%= @user.last_name %>
+</div>
+
+<div>
+  Email:<br>
+  <%= @user.email %>
+</div>
+
+
+<div>
+  Licensed? :<br>
+  <%= @user.licensed? ? "Yes" : "No" %>
+</div>
+
+<div>
+  License Date:<br>
+  <%= @user.license_date %>
+</div>
+
+
+<div>
+  What is your biggest inspiration?<br>
+  <%= @user.career_inspiration %>
+</div>
+
+
+<div>
+  How long have you been tattooing?<br>
+  <%= @user.how_long_have_you_been_tattooing %>
+</div>
+
+<div>
+  How do you bill work?<br>
+  <%= @user.billing %>
+</div>
+
+
+<div>
+  How did you learn tattooing?<br>
+  <%= @user.how_did_you_learn_tattooing %>
+</div>
+
+
+<div>
+  Name of Studio or Mentor<br>
+  <%= @user.studio_or_mentor %>
+</div>
+
+<% @user.photos.each do |photo| %>
+  <div>
+     <%= image_tag photo.attachment.url %>
+  </div>
+<% end %>
+
+
+
+
+
+

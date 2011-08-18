@@ -1,259 +1,67 @@
---- 
-specs: 
-- rake: 
-    version: 0.8.7
-- Saikuro: 
-    version: 1.1.0
-- activesupport: 
-    version: 2.3.8
-- rack: 
-    version: 1.1.0
-- actionpack: 
-    version: 2.3.8
-- actionmailer: 
-    version: 2.3.8
-- activerecord: 
-    version: 2.3.8
-- activeresource: 
-    version: 2.3.8
-- acts_as_commentable: 
-    version: 3.0.0
-- arrayfields: 
-    version: 4.7.4
-- authlogic: 
-    version: 2.1.3
-- builder: 
-    version: 2.1.2
-- mime-types: 
-    version: "1.16"
-- xml-simple: 
-    version: 1.0.12
-- aws-s3: 
-    version: 0.6.2
-- bcrypt-ruby: 
-    version: 2.1.2
-- bundler: 
-    version: 0.9.26
-- json_pure: 
-    version: 1.4.3
-- rubyforge: 
-    version: 2.0.4
-- hoe: 
-    version: 2.6.1
-- chronic: 
-    version: 0.2.3
-- hirb: 
-    version: 0.3.2
-- fattr: 
-    version: 2.1.0
-- main: 
-    version: 4.2.0
-- sexp_processor: 
-    version: 3.0.4
-- ruby_parser: 
-    version: 2.0.4
-- churn: 
-    version: 0.0.12
-- columnize: 
-    version: 0.3.1
-- rails: 
-    version: 2.3.8
-- declarative_authorization: 
-    version: "0.4"
-- paperclip: 
-    version: 2.3.1.1
-- delayed_paperclip: 
-    version: 0.6.5
-- exifr: 
-    version: 0.10.9
-- factory_girl: 
-    version: 1.3.1
-- fastercsv: 
-    version: 1.5.0
-- flay: 
-    version: 1.4.0
-- flog: 
-    version: 2.2.0
-- formtastic: 
-    version: 0.9.7
-- geokit: 
-    version: 1.5.0
-- hoptoad_notifier: 
-    version: 2.3.2
-- json: 
-    version: 1.4.3
-- linecache: 
-    version: "0.43"
-- ruby2ruby: 
-    version: 1.2.4
-- rails_best_practices: 
-    version: 0.3.26
-- rcov: 
-    version: 0.9.8
-- reek: 
-    version: 1.2.7.1
-- roodi: 
-    version: 2.1.0
-- metric_fu: 
-    version: 1.5.1
-- mysql: 
-    version: 2.8.1
-- recaptcha: 
-    version: 0.2.3
-- relevance-rcov: 
-    version: 0.9.0
-- resource_controller: 
-    version: 0.6.6
-- ruby-debug-base: 
-    version: 0.10.3
-- ruby-debug: 
-    version: 0.10.3
-- searchlogic: 
-    version: 2.4.12
-- will_paginate: 
-    version: 2.3.12
-- yelp: 
-    version: 1.0.0
-hash: 961ee49c7aa7635515f4384fc01e102dc6548425
-sources: 
-- Rubygems: 
-    uri: http://gemcutter.org
-- Rubygems: 
-    uri: http://gems.github.com
-dependencies: 
-  ruby-debug: 
-    version: ">= 0"
-    group: 
-    - :development
-  recaptcha: 
-    version: = 0.2.3
-    group: 
-    - :default
-  fastercsv: 
-    version: = 1.5.0
-    group: 
-    - :default
-  flog: 
-    version: = 2.2.0
-    group: 
-    - :metrics
-  rails: 
-    version: = 2.3.8
-    require: []
+GEM
+  remote: http://http//rubygems.org/
+  specs:
+    actionmailer (2.3.8)
+      actionpack (= 2.3.8)
+    actionpack (2.3.8)
+      activesupport (= 2.3.8)
+      rack (~> 1.1.0)
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    authlogic (2.1.3)
+      activesupport
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
+    bcrypt-ruby (2.1.2)
+    builder (3.0.0)
+    declarative_authorization (0.4)
+      rails (>= 2.1.0)
+    factory_girl (1.3.3)
+    formtastic (0.9.7)
+      actionpack (>= 2.3.0)
+      activesupport (>= 2.3.0)
+    hoptoad_notifier (2.4.6)
+      activesupport
+      builder
+    mime-types (1.16)
+    mysql (2.8.1)
+    paperclip (2.3.1.1)
+    rack (1.1.0)
+    rails (2.3.8)
+      actionmailer (= 2.3.8)
+      actionpack (= 2.3.8)
+      activerecord (= 2.3.8)
+      activeresource (= 2.3.8)
+      activesupport (= 2.3.8)
+      rake (>= 0.8.3)
+    rake (0.9.2)
+    recaptcha (0.3.1)
+    searchlogic (2.4.27)
+      activerecord (>= 2.0.0)
+    will_paginate (2.3.15)
+    xml-simple (1.1.0)
 
-    group: 
-    - :default
-  ruby-debug-base: 
-    version: ">= 0"
-    group: 
-    - :development
-  churn: 
-    version: ">= 0"
-    group: 
-    - :metrics
-  flay: 
-    version: = 1.4.0
-    group: 
-    - :metrics
-  Saikuro: 
-    version: ">= 0"
-    group: 
-    - :metrics
-  mysql: 
-    version: ">= 0"
-    group: 
-    - :default
-  acts_as_commentable: 
-    version: = 3.0.0
-    group: 
-    - :default
-  searchlogic: 
-    version: = 2.4.12
-    group: 
-    - :default
-  declarative_authorization: 
-    version: = 0.4
-    group: 
-    - :default
-  authlogic: 
-    version: = 2.1.3
-    group: 
-    - :default
-  will_paginate: 
-    version: = 2.3.12
-    group: 
-    - :default
-  roodi: 
-    version: = 2.1.0
-    group: 
-    - :metrics
-  rack: 
-    version: = 1.1.0
-    group: 
-    - :default
-  formtastic: 
-    version: = 0.9.7
-    require: []
+PLATFORMS
+  ruby
 
-    group: 
-    - :default
-  geokit: 
-    version: ">= 0"
-    group: 
-    - :default
-  yelp: 
-    version: ">= 0"
-    group: 
-    - :default
-  relevance-rcov: 
-    version: = 0.9.0
-    require: 
-    - rcov
-    group: 
-    - :metrics
-  factory_girl: 
-    version: ">= 0"
-    group: 
-    - :default
-  exifr: 
-    version: = 0.10.9
-    group: 
-    - :default
-  paperclip: 
-    version: = 2.3.1.1
-    group: 
-    - :default
-  resource_controller: 
-    version: = 0.6.6
-    group: 
-    - :default
-  reek: 
-    version: = 1.2.7.1
-    group: 
-    - :metrics
-  metric_fu: 
-    version: ">= 0"
-    group: 
-    - :metrics
-  hoptoad_notifier: 
-    version: ">= 0"
-    group: 
-    - :default
-  bundler: 
-    version: = 0.9.26
-    group: 
-    - :metrics
-  aws-s3: 
-    version: ">= 0"
-    require: 
-    - aws/s3
-    group: 
-    - :default
-  bcrypt-ruby: 
-    version: = 2.1.2
-    group: 
-    - :default
-  delayed_paperclip: 
-    version: ">= 0"
-    group: 
-    - :default
+DEPENDENCIES
+  authlogic (= 2.1.3)
+  aws-s3
+  bcrypt-ruby (= 2.1.2)
+  bundler
+  declarative_authorization (= 0.4)
+  factory_girl
+  formtastic (= 0.9.7)
+  hoptoad_notifier
+  mysql
+  paperclip (= 2.3.1.1)
+  rack (= 1.1.0)
+  rails (= 2.3.8)
+  recaptcha
+  searchlogic
+  will_paginate

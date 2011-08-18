@@ -1,0 +1,5 @@
+<% f.semantic_fields_for :photos, f.object.photos do |asset_f| %>
+  <%= render :partial => "photo", :locals => {:f => asset_f}   %>
+<% end %>
+
+<p class="attachment"><%= link_to_add_fields 'Add Photos', f, :photos %></p>

@@ -25,29 +25,24 @@
 =end Schema Information
 
 class User < ApplicationModel
-  
-  belongs_to :property_group
-  
-  ROLES = ['Admin','Site Manager', 'Property Group Manager', 'Maintainance Man', 'Tenant']
-  
+
   acts_as_authentic do |c|
     c.validate_password_field = false
   end
-  
   model_stamper
   stampable
   
-  attr_protected :password, :password_confirmation, :role
-  
-  validates_presence_of :first_name, :last_name, :email, :role
-  attr_accessor :current_password
-  attr_protected :password
-  validates_confirmation_of :password
-  validates_length_of :password, :minimum => 6, :allow_nil => true
-  validates_format_of :password, :with => /[a-z]/i, :allow_nil => true, :message => "must include a letter"
-  validates_format_of :password, :with => /[0-9]/, :allow_nil => true, :message => "must include a number"
+  has_many :photos
+    
+  validates_presence_of :first_name, :last_name, :email
+  # attr_accessor :current_password
+  # attr_protected :password
+  # validates_confirmation_of :password
+  # validates_length_of :password, :minimum => 6, :allow_nil => true
+  # validates_format_of :password, :with => /[a-z]/i, :allow_nil => true, :message => "must include a letter"
+  # validates_format_of :password, :with => /[0-9]/,  :allow_nil => true, :message => "must include a number"
 
-  accepts_nested_attributes_for :property_group
+  accepts_nested_attributes_for :photos, :allow_destroy => true
 
   # This method is necessary method for declarative_authorization to determine roles
   # Roles returns e.g. [:admin]
