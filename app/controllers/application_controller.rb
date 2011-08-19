@@ -2,32 +2,32 @@
 # Likewise, all the methods added will be available for all controllers.
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  
+  before_filter :authenticate
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '2d3c5d404e8a73e3edb34c8d09be8abe'
-  
-  # See ActionController::Base for details 
+
+  # See ActionController::Base for details
   # Uncomment this to filter the contents of submitted sensitive data parameters
-  # from your application log (in this case, all fields with names like "password"). 
+  # from your application log (in this case, all fields with names like "password").
   filter_parameter_logging :password, :password_confirmation
-  
+
   # Integration of authentication
   include AuthenticationUtils
-  
+
   # Integration of authorization
   include AuthorizationUtils
   helper_method :current_user_session, :current_user
   # before_filter :require_login
-  
+
   # Userstamp configuration
   include Userstamp
   def set_stamper
     User.stamper ||= current_user
   end
-  
+
   before_filter :cancel_message
-  
+
   protected
     def cancel_message
       if params[:_cancel]
@@ -38,21 +38,29 @@ class ApplicationController < ActionController::Base
         true
       end
     end
-  
+
     # Define how declarative authentication responds to permission denied.
     def permission_denied
       raise Authorization::NotAuthorized
     end
-  
+
+    def authenticate
+      unless ENV['RAILS_ENV'] == 'development'
+        authenticate_or_request_with_http_basic do |username, password|
+          username == "elite" && password == "loser"
+        end
+      end
+    end
+
   private
     rescue_from Exception, :with => :server_error if RAILS_ENV != 'development'
     def server_error(exception)
       notify_hoptoad(exception) if respond_to?(:notify_hoptoad)
-    
+
       request.format = :html
       render :template => "errors/500", :status => 500
     end
-  
+
     rescue_from Authorization::NotAuthorized, :with => :not_authorized
     def not_authorized
       request.format = :html
