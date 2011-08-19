@@ -33,6 +33,9 @@ class User < ApplicationModel
   stampable
   
   has_many :photos
+  has_many :artist_services
+  has_many :services, :through => :artist_services
+  
     
   validates_presence_of :first_name, :last_name, :email
   # attr_accessor :current_password

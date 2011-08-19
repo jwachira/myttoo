@@ -30,6 +30,14 @@ namespace :data do
         end
       end
       
+      
+      task :services => :environment do
+        ['Tattooing', 'Piercing', 'Basic Body Modification', 'Scarification', 'Tattoo Coverup', 'Aftercare Consultation', 'Tattoo Design'].each do |service|
+          puts "#{service}"
+          Service.create(:name => service)
+        end
+      end
+      
     end #namespace :default
   end #namespace :load
 end #namspace :data

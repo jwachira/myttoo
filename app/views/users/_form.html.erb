@@ -3,16 +3,30 @@
   <%= f.input :first_name %> 
   <%= f.input :last_name %> 
   <%= f.input :email %>
-  <%= f.input :date_of_birth %>
+  <%= f.input :studio, :label => "Studio Name" %>
+  <%= f.input :ownership, :label => "Do you own this studio?", :as => :radio %>
+  <%= f.input :number_of_employees, :label => "No. of Employees/Co-workers" %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :postal_code %>
+  <%= f.input :website %>
+  <%= f.input :facebook_page, :label => "Link to your facebook page" %>
+  <%= f.input :twitter_page,  :label => "Link to your twitter page" %>
+  <%= f.input :phone_number %>
+  <%= f.input :date_of_birth, :start_year => 1943 %>
   <%= f.input :licensed, :as => :boolean, :label => "Are you licensed?" %>
-  <%= f.input :license_date,              :label => "Licensed since"    %>
+  <%= f.input :license_date,              :label => "Licensed since", :start_year => 1983   %>
   <%= f.input :cpr_certified, :as => :boolean, :label => "CPR Certified?" %>
   <%= f.input :career_inspiration, :label => "What was your biggest inspiration?" %>
   <%= f.input :how_long_have_you_been_tattooing, :collection => (0..50).to_a, :as => :select, :label => "How long have you been tattooing?", :hint => "(do not consider apprenticeship years)"%>
   <%= f.input :billing, :collection => ["Per Hour", "Per Tattoo", "Both"], :label => "How do you bill work?", :as => :select %>
   <%= f.input :how_did_you_learn_tattooing, :collection => ["self-taught", "studio apprenticeship", "taught by mentor"], :label => "How did you learn tattooing", :as => :select  %>
   <%= f.input :studio_or_mentor, :label => "Name of Studio or Mentor" %>
-  
+  <%= f.input :any_awards, :label => "Do you have any awards?", :as => :boolean %>
+  <%= f.input :total_awards, :label => "if So, How many? " %>
+  <%= f.input :tattoo_style, :label => "Are you skilled in freehand, flash, or both", :collection => ['Freehand', 'Flash', 'Both'], :as => :select %>
+  <%= f.input :service_ids, :collection => Service.all, :as => :check_boxes, :label => "What other services do you offer?" %>
+  <%= f.input :feedback, :label => "Any other suggestions for this application form?" %>
   <%= render :partial => "attachment", :locals => {:f => f} %>
   
   
