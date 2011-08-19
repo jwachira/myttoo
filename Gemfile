@@ -1,10 +1,4 @@
-# Helpful note, you need to run 
-# bundle unlock 
-# from the command line before editing this file and
-# bundle lock 
-# after
-
-source 'http://rubygems.org/'
+source "http://rubygems.org"
 
 gem 'rails',              '2.3.8',  :require => nil
 gem 'rack',               '1.1.0'
