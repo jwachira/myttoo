@@ -15,13 +15,6 @@
     <%= yield :header %>
     <div>
       <h1><a href="/">EliteBodyArtists</a></h1>
-      
-      <% if current_user %>
-      <h3>
-        <span id="user_info">Hello, <%= link_to h(current_user.full_name), user_path(current_user) %></span>
-        <span id="logout">(<%= link_to 'Log Out', logout_path %>)<span>
-      </h3>
-      <% end %>
     </div>
   </div>
   <!-- HEADER end -->
