@@ -1,5 +1,8 @@
 <% title @user.full_name  %>
 
+<p><%= link_to 'View All Artists', users_path %></p>
+
+  
 <div>
   First Name:<br>
   <%= @user.first_name %>
@@ -54,6 +57,39 @@
   Name of Studio or Mentor<br>
   <%= @user.studio_or_mentor %>
 </div>
+
+<div>
+  Studio Name: <%= @user.studio %>
+</div>
+
+<div>
+  Facebook Page: <%= @user.facebook_page %>
+</div>
+
+<div>
+  Twitter Page: <%= @user.twitter_page %>
+</div>
+
+<div>
+  Address:  <%= "#{@user.address}, #{@user.city} #{@user.zipcode}"  %>
+</div>
+
+<div>
+  Number Of Awards : <%= @user.total_awards %>
+</div>
+
+<div>
+  Tattoo Speciality: <%= @user.tattoo_style %>
+</div>
+
+<div>
+  Other Services : <%= @user.services.map{|t| t.service.name}.join(', ') %>
+</div>
+
+<div>
+ Suggestions: <%= @user.feedback %>
+</div>
+
 
 <% @user.photos.each do |photo| %>
   <div>
