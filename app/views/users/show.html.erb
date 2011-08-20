@@ -1,89 +1,97 @@
 <% title @user.full_name  %>
 
+<style>
+  div {
+    margin-bottom:15px;
+  }
+</style>
+
 <p><%= link_to 'View All Artists', users_path %></p>
 
   
 <div>
-  First Name:<br>
+  <strong>First Name:</strong>
   <%= @user.first_name %>
 </div>
 
 <div>
-  Last Name:<br>
+  <strong>Last Name:</strong>
   <%= @user.last_name %>
 </div>
 
 <div>
-  Email:<br>
+  <strong>Email:</strong>
   <%= @user.email %>
 </div>
 
+<div>
+  <strong>Phone Number:</strong>
+  <%= @user.phone_number %>
+</div>
 
 <div>
-  Licensed? :<br>
+  <strong>Licensed?</strong>
   <%= @user.licensed? ? "Yes" : "No" %>
 </div>
 
 <div>
-  License Date:<br>
+  <strong>License Date:</strong>
   <%= @user.license_date %>
 </div>
 
 
 <div>
-  What is your biggest inspiration?<br>
+  <strong>What is your biggest inspiration?</strong>
   <%= @user.career_inspiration %>
 </div>
 
 
 <div>
-  How long have you been tattooing?<br>
+  <strong>How long have you been tattooing?</strong>
   <%= @user.how_long_have_you_been_tattooing %>
 </div>
 
 <div>
-  How do you bill work?<br>
+  <strong>How do you bill work?</strong>
   <%= @user.billing %>
 </div>
 
 
 <div>
-  How did you learn tattooing?<br>
-  <%= @user.how_did_you_learn_tattooing %>
+  <strong>How did you learn tattooing?</strong> <%= @user.how_did_you_learn_tattooing %>
 </div>
 
 
 <div>
-  Name of Studio or Mentor<br>
-  <%= @user.studio_or_mentor %>
+  <strong>Name of Studio or Mentor:</strong> <%= @user.studio_or_mentor %>
 </div>
 
 <div>
-  Studio Name: <%= @user.studio %>
+  <strong>My Studio Name:</strong> <%= @user.studio %>
 </div>
 
 <div>
-  Facebook Page: <%= @user.facebook_page %>
+  <strong>Facebook Page:</strong> <%= @user.facebook_page %>
 </div>
 
 <div>
-  Twitter Page: <%= @user.twitter_page %>
+  <strong>Twitter Page:</strong> <%= @user.twitter_page %>
 </div>
 
 <div>
-  Address:  <%= "#{@user.address}, #{@user.city} #{@user.zipcode}"  %>
+  <strong>Address:</strong>  <%= "#{@user.address}, #{@user.city} #{@user.postal_code}"  %>
 </div>
 
 <div>
-  Number Of Awards : <%= @user.total_awards %>
+  <strong>Number Of Awards:</strong> <%= @user.total_awards %>
 </div>
 
 <div>
-  Tattoo Speciality: <%= @user.tattoo_style %>
+  <strong>Tattoo Speciality:</strong> <%= @user.tattoo_style %>
 </div>
 
 <div>
-  Other Services : <%= @user.services.map{|t| t.service.name}.join(', ') %>
+  <strong>Other Services:</strong> <%= @user.services.map{|t| t.service.name}.join(', ') %>
 </div>
 
 <div>
