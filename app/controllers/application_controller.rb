@@ -53,24 +53,24 @@ class ApplicationController < ActionController::Base
     end
 
   private
-    rescue_from Exception, :with => :server_error if RAILS_ENV != 'development'
-    def server_error(exception)
-      notify_hoptoad(exception) if respond_to?(:notify_hoptoad)
-
-      request.format = :html
-      render :template => "errors/500", :status => 500
-    end
-
-    rescue_from Authorization::NotAuthorized, :with => :not_authorized
-    def not_authorized
-      request.format = :html
-      render :template => "errors/403", :status => 403
-    end
-
-    rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
-    rescue_from ActionController::RoutingError, :with => :record_not_found if RAILS_ENV != 'development' # Authlogic & cache_classes don't play well in this context
-    def record_not_found
-      request.format = :html
-      render :template => "errors/404", :status => 404
-    end
+    # rescue_from Exception, :with => :server_error if RAILS_ENV != 'development'
+    # def server_error(exception)
+    #   notify_hoptoad(exception) if respond_to?(:notify_hoptoad)
+    # 
+    #   request.format = :html
+    #   render :template => "errors/500", :status => 500
+    # end
+    # 
+    # rescue_from Authorization::NotAuthorized, :with => :not_authorized
+    # def not_authorized
+    #   request.format = :html
+    #   render :template => "errors/403", :status => 403
+    # end
+    # 
+    # rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+    # rescue_from ActionController::RoutingError, :with => :record_not_found if RAILS_ENV != 'development' # Authlogic & cache_classes don't play well in this context
+    # def record_not_found
+    #   request.format = :html
+    #   render :template => "errors/404", :status => 404
+    # end
 end
