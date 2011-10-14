@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  # filter_access_to :all
-  # filter_access_to :edit, :update, :attribute_check => true
-
   # GET /users
   def index
-    @users = User.all
+    if params[:admin]
+      @users = User.all
+    else
+      return redirect_to new_user_path
+    end
   end
 
   # GET /users/1
@@ -56,5 +57,17 @@ class UsersController < ApplicationController
     @user.destroy
     
     redirect_to(users_url)
+  end
+  
+  
+  private
+  
+  
+  def authenticate_user
+    unless ENV['RAILS_ENV'] == 'development'
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "admin" && password == "admin123"
+      end
+    end
   end
 end

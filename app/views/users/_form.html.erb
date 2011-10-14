@@ -1,35 +1,54 @@
 <%= f.error_messages %>
-<% f.inputs do %>
+<% f.inputs "Personal Information" do %>
   <%= f.input :first_name %> 
   <%= f.input :last_name %> 
+  <%= f.input :nick_name, :label => "Proffessional Nickname" %>
+  <%= f.input :name_on_certificate, :label => "Name you want on your professional artist certificate?" %>
   <%= f.input :email %>
+  <%= f.input :date_of_birth, :start_year => 1943 %>
   <%= f.input :studio, :label => "Studio Name" %>
   <%= f.input :ownership, :label => "Do you own this studio?", :as => :radio %>
   <%= f.input :number_of_employees, :label => "No. of Employees/Co-workers" %>
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :postal_code %>
-  <%= f.input :website %>
-  <%= f.input :facebook_page, :label => "Link to your facebook page" %>
-  <%= f.input :twitter_page,  :label => "Link to your twitter page" %>
   <%= f.input :phone_number %>
-  <%= f.input :date_of_birth, :start_year => 1943 %>
+  <%= f.input :opening_times %>
+  <%= f.input :minimum_spend %>
+  <%= f.input :hourly_rate %>
+<% end  %>
+
+<% f.inputs "Professional Details/Resume" do %>
+	<%= f.input :how_long_have_you_been_tattooing, :collection => (0..50).to_a, :as => :select, :label => "How long have you been tattooing?", :hint => "(do not consider apprenticeship years)"%>
+  <%= f.input :how_did_you_learn_tattooing, :collection => ["self-taught", "studio apprenticeship", "taught by mentor"], :label => "How did you learn tattooing", :as => :select  %>
+  <%= f.input :tattoo_style, :label => "Are you skilled in freehand, flash, or both", :collection => ['Freehand', 'Flash', 'Both'], :as => :select %>
+  <%= f.input :tattoo_style_ids, :collection => TattooStyle.all, :label => "Preference in Tattoo Styles (many people search for artists with special skills)", :as => :select %>
+  <%= f.input :service_ids, :collection => Service.all, :as => :check_boxes, :label => "What other services do you/shop offer?" %>
+  <%= f.input :language_ids, :collection => Language.all, :as =>:check_boxes, :label => "Which languages do you speak fluently? " %>
   <%= f.input :licensed, :as => :boolean, :label => "Are you licensed?" %>
   <%= f.input :license_date,              :label => "Licensed since", :start_year => 1983   %>
   <%= f.input :cpr_certified, :as => :boolean, :label => "CPR Certified?" %>
-  <%= f.input :career_inspiration, :label => "What was your biggest inspiration?" %>
-  <%= f.input :how_long_have_you_been_tattooing, :collection => (0..50).to_a, :as => :select, :label => "How long have you been tattooing?", :hint => "(do not consider apprenticeship years)"%>
+  <%= f.input :career_inspiration, :label => "Tell us about your biggest inspiration in tattooing? (this field will be visible in profile to edit)" %>
   <%= f.input :billing, :collection => ["Per Hour", "Per Tattoo", "Both"], :label => "How do you bill work?", :as => :select %>
-  <%= f.input :how_did_you_learn_tattooing, :collection => ["self-taught", "studio apprenticeship", "taught by mentor"], :label => "How did you learn tattooing", :as => :select  %>
   <%= f.input :studio_or_mentor, :label => "Name of Studio or Mentor" %>
   <%= f.input :any_awards, :label => "Do you have any awards?", :as => :boolean %>
   <%= f.input :total_awards, :label => "if So, How many? " %>
-  <%= f.input :tattoo_style, :label => "Are you skilled in freehand, flash, or both", :collection => ['Freehand', 'Flash', 'Both'], :as => :select %>
-  <%= f.input :service_ids, :collection => Service.all, :as => :check_boxes, :label => "What other services do you offer?" %>
-  <%= f.input :feedback, :label => "Any other suggestions for this application form?" %>
-  <%= render :partial => "attachment", :locals => {:f => f} %>
-  
-  
+  <%= f.input :attend_conventions, :collection => ["none", "Once a year", "More than Once a year"], :as => :radio, :label => "How often do you attend Tattoo conventions?" %>
+  <%= f.input :guest_spots, :as => :radio, :label => "Interested in guest spotting?" %>
+<% end %>
+
+<% f.inputs "Social Media" do %>
+ <%= f.input :website %>
+ <%= f.input :facebook_page, :label => "Link to your facebook page" %>
+ <%= f.input :twitter_page,  :label => "Link to your twitter page" %>
+<% end %>
+
+<% f.inputs "Upload Artwork" do %>
+	<%= render :partial => "attachment", :locals => {:f => f} %>
+<% end %>
+
+<% f.inputs "Feedback" do %>
+	<%= f.input :feedback, :label => "Any other suggestions for this application form?" %>
 <% end %>
 
 <% f.buttons do %>

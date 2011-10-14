@@ -35,7 +35,10 @@ class User < ApplicationModel
   has_many :photos
   has_many :artist_services
   has_many :services, :through => :artist_services
-  
+  has_many :user_tattoo_styles
+  has_many :tattoo_styles, :through => :user_tattoo_styles
+  has_many :user_languages
+  has_many :languages, :through => :user_languages
     
   validates_presence_of :first_name, :last_name, :email
   # attr_accessor :current_password
