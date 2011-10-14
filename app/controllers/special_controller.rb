@@ -1,5 +1,5 @@
 class SpecialController < ApplicationController
   def home
-    @users = User.all
+    @user = User.new
   end
 end
