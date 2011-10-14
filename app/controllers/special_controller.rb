@@ -1,5 +1,5 @@
 class SpecialController < ApplicationController
   def home
-    @user = User.new
+    return redirect_to new_user_path
   end
 end
